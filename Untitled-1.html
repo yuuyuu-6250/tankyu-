@@ -10,11 +10,9 @@
             font-family: Arial, sans-serif;
             font-size: 18px;
             background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
             display: inline-block;
             position: absolute;
-            left: 50%;  /*親要素を起点に左から50%*/
+            left: 93%;  /*親要素を起点に左から50%*/
             transform: translateX(-50%); /*要素の大きさの半分ずつを戻す*/
             -webkit-transform: translateX(-50%);
         }
@@ -61,9 +59,12 @@
         <h1>test.html</h1>
     </header>
     <div class="visitor-counter">
-        <span class="visitor-label">訪問者数：</span>
+        <span class="visitor-label">訪問者数</span>
         <span id="visitor-count">0</span>
     </div>
+    <main>
+        <p>ここにコンテンツを追加します。</p>
+    </main>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
         let count = localStorage.getItem('visitorCount');
@@ -79,5 +80,6 @@
         document.getElementById('visitor-count').textContent = count;
     });
     </script>
+    <script src="music.js"></script>
 </body>
 </html>
