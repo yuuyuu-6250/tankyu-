@@ -175,6 +175,50 @@ document.addEventListener("keydown", event => {
     }
 });
 
+// タッチイベントリスナー
+canvas.addEventListener("touchstart", event => {
+    if (!paused) {
+        const touch = event.touches[0];
+        const touchX = touch.clientX;
+        const laneIndex = Math.floor(touchX / laneWidth);
+        handleTouch(laneIndex);
+    }
+});
+
+function handleTouch(laneIndex) {
+    for (let i in notes[laneIndex]) {
+        const noteCenterY = notes[laneIndex][i].y + noteHeight / 2;
+
+        if (
+            judgmentLineY - perfectMargin <= noteCenterY &&
+            noteCenterY <= judgmentLineY + perfectMargin
+        ) {
+            notes[laneIndex].splice(i, 1);
+            score++;
+            judgmentResult = "Perfect";
+            return;
+        } else if (
+            judgmentLineY - greatMargin <= noteCenterY &&
+            noteCenterY <= judgmentLineY + greatMargin
+        ) {
+            notes[laneIndex].splice(i, 1);
+            score++;
+            judgmentResult = "Great";
+            return;
+        } else if (
+            judgmentLineY - goodMargin <= noteCenterY &&
+            noteCenterY <= judgmentLineY + goodMargin
+        ) {
+            notes[laneIndex].splice(i, 1);
+            score++;
+            judgmentResult = "Good";
+            return;
+        } else {
+            judgmentResult = "Miss";
+        }
+    }
+}
+
 // スタートボタンのクリックイベントリスナー
 document.getElementById("startButton").addEventListener("click", () => {
     gameStarted = true;
