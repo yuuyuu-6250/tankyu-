@@ -6,25 +6,9 @@
     <title>訪問者カウンター</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .visitor-counter {
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            background-color: #f0f0f0;
-            display: inline-block;
-            position: absolute;
-            left: 93%;  /*親要素を起点に左から50%*/
-            transform: translateX(-50%); /*要素の大きさの半分ずつを戻す*/
-            -webkit-transform: translateX(-50%);
-        }
-        .visitor-label {
-            font-weight: bold;
-        }
         .header-links {
             display: flex;
             gap: 10px; /* リンク間のスペースを調整 */
-        }
-        #visitor-count {
-            color: #007bff;
         }
         body {
             margin: 0;
@@ -38,10 +22,9 @@
             text-align: left;
             font-size: 20px;
             font-family: Arial, sans-serif;
-            vertical-align: middle; /* 追加 */
-            display: flex; /* 追加 */
-            align-items: center; /* 追加 */
-            justify-content: space-between; /* 追加 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             flex-wrap: wrap; /* 可変長にするために追加 */
         }
         h1 {
