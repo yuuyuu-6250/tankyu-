@@ -37,6 +37,7 @@ const goodMargin = 20;
 
 // 一時停止フラグ
 let paused = false;
+let gameStarted = false; // ゲーム開始フラグ
 
 // キー対応表
 const keyMap = { KeyD: 0, KeyF: 1, KeyJ: 2, KeyK: 3 };
@@ -174,9 +175,16 @@ document.addEventListener("keydown", event => {
     }
 });
 
+// スタートボタンのクリックイベントリスナー
+document.getElementById("startButton").addEventListener("click", () => {
+    gameStarted = true;
+    document.getElementById("startButton").style.display = "none"; // スタートボタンを非表示にする
+    gameLoop();
+});
+
 // メインループ
 function gameLoop() {
-    if (!paused) {
+    if (gameStarted && !paused) {
         generateNote();
         updateNotes();
     }
@@ -185,6 +193,3 @@ function gameLoop() {
     
     requestAnimationFrame(gameLoop);
 }
-
-// ゲーム開始
-gameLoop();
