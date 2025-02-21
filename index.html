@@ -81,27 +81,8 @@
             <a href="index_2.html">プロトタイプ</a>
         </div>
     </header>
-    <div class="visitor-counter">
-        <span class="visitor-label">訪問者数</span>
-        <span id="visitor-count">0</span>
-    </div>
     <main>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        let count = localStorage.getItem('visitorCount');
-        
-        if (count === null) {
-            count = 1;
-        } else {
-            count = parseInt(count) + 1;
-        }
-        
-        localStorage.setItem('visitorCount', count);
-        
-        document.getElementById('visitor-count').textContent = count;
-    });
-    </script>
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRHvvQHH23tDxXe5dHdYwtMIsqkNUUxr5w_xwatWdQ1mXYXS9xe66K3KWh8RqKg_xP_PPP2IR6rxa2/embed?start=false&loop=false&delayms=60000" frameborder="0" width="545" height="800" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     <!--<embed src=525.pdf width=1600 height=800></embed>>-->
 </body>
