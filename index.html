@@ -19,6 +19,10 @@
         .visitor-label {
             font-weight: bold;
         }
+        .header-links {
+            display: flex;
+            gap: 10px; /* リンク間のスペースを調整 */
+        }
         #visitor-count {
             color: #007bff;
         }
@@ -72,7 +76,10 @@
 <body>
     <header>
         <h1>test.html</h1>
-        <a href="index_2.html">プロトタイプ</a>
+        <div class="header-links">
+            <a href="index.html">ホーム</a>
+            <a href="index_2.html">プロトタイプ</a>
+        </div>
     </header>
     <div class="visitor-counter">
         <span class="visitor-label">訪問者数</span>
@@ -96,6 +103,5 @@
     });
     </script>
     <embed src=525.pdf width=1600 height=800></embed>
-    <script src="music.js"></script>
 </body>
 </html>
